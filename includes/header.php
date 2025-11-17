@@ -1,27 +1,32 @@
 <header class="shadow-lg sticky top-0 z-10">
     <nav class="bg-blue-900 px-6 sm:px-10 py-4 flex justify-between items-center">
-        <a href="#" class="text-white text-3xl font-bold tracking-tight hover:text-blue-200 transition duration-300">
+        <a href="<?= $base ?>" class="text-white text-3xl font-bold tracking-tight hover:text-blue-200 transition duration-300">
             Dhakar Chaka
         </a>
 
         <div class="hidden md:flex items-center space-x-6">
             <ul class="flex space-x-4">
                 <li>
-                    <a href="#" class="text-white font-semibold uppercase tracking-wider px-3 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Home</a>
+                    <a href="<?= $base ?>" class="text-white font-semibold uppercase tracking-wider px-3 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Home</a>
                 </li>
                 <li>
-                    <a href="#" class="text-white font-semibold uppercase tracking-wider px-3 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Services</a>
+                    <a href="<?= $base ?>/#services" class="text-white font-semibold uppercase tracking-wider px-3 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Services</a>
                 </li>
                 <li>
-                    <a href="#" class="text-white font-semibold uppercase tracking-wider px-3 py-2 rounded-lg hover:bg-blue-600 transition duration-300">About Us</a>
-                </li>
-                <li>
-                    <a href="#" class="text-white font-semibold uppercase tracking-wider px-3 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Profile</a>
+                    <a href="<?= $base ?>/#why-choose-us" class="text-white font-semibold uppercase tracking-wider px-3 py-2 rounded-lg hover:bg-blue-600 transition duration-300">About Us</a>
                 </li>
             </ul>
-            <a href="#" class="bg-white text-blue-700 font-bold uppercase text-sm px-4 py-2 rounded-full hover:bg-gray-100 transition duration-300">
-                Book Now
-            </a>
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <?php if (isset($_SESSION['is_moderator']) && $_SESSION['is_moderator']): ?>
+                    <a href="<?= $base ?>/dashboard_admin.php" class="text-white font-semibold uppercase tracking-wider px-3 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Dashboard</a>
+                <?php else: ?>
+                    <a href="<?= $base ?>/dashboard_user.php" class="text-white font-semibold uppercase tracking-wider px-3 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Dashboard</a>
+                <?php endif; ?>
+            <?php else: ?>
+                <a href="<?= $base ?>/login" class="bg-white text-blue-700 font-bold uppercase text-sm px-4 py-2 rounded-full hover:bg-gray-100 transition duration-300">
+                    Sign-In
+                </a>
+            <?php endif; ?>
         </div>
 
         <div class="md:hidden">

@@ -1,3 +1,7 @@
+<?php
+$base = '/dhakar-chaka/public/'; // my project root relative to localhost
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +15,10 @@
 <body class="font-sans text-gray-800">
     <?php include '../includes/header.php'; ?>
     <main>
-        <section class="bg-gray-50 py-24 sm:py-32 border-b border-gray-200">
+        <!-- ----------------------- Hero Section ----------------------- -->
+        <!-- ----------------------- Hero Section ----------------------- -->
+        <!-- ----------------------- Hero Section ----------------------- -->
+        <section id="#" class="bg-gray-50 py-24 sm:py-32 border-b border-gray-200">
             <div class="container mx-auto px-6 text-center">
                 <h1 class="text-5xl font-extrabold mb-4 text-gray-900 leading-tight">Welcome to Dhakar Chaka</h1>
                 <p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">Your trusted, one-stop solution for all your
@@ -23,7 +30,10 @@
             </div>
         </section>
 
-        <section class="bg-white py-20 sm:py-24">
+        <!-- ----------------------- Services ----------------------- -->
+        <!-- ----------------------- Services ----------------------- -->
+        <!-- ----------------------- Services ----------------------- -->
+        <section id="services" class="bg-white py-20 sm:py-24">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-4xl font-bold mb-4 text-blue-700">What We Can Do</h2>
                 <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">Explore the essential services we offer to make
@@ -76,7 +86,10 @@
             </div>
         </section>
 
-        <section class="bg-gray-50 py-20 sm:py-24 border-t border-gray-200">
+        <!-- ----------------------- Why Choose Us ----------------------- -->
+        <!-- ----------------------- Why Choose Us ----------------------- -->
+        <!-- ----------------------- Why Choose Us ----------------------- -->
+        <section id="why-choose-us" class="bg-gray-50 py-20 sm:py-24 border-t border-gray-200">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-4xl font-bold mb-4 text-blue-700">Why Choose Us</h2>
                 <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">Discover the benefits of choosing Dhakar Chaka
