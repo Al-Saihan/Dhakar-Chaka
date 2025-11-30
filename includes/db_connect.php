@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 /** Database credentials for XAMPP defaults */
 const DB_HOST = 'localhost';

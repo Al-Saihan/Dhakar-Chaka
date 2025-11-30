@@ -35,9 +35,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['is_moderator'] = (bool) $user['moderator'];
 
         if ($_SESSION['is_moderator']) {
-            header("Location: " . $base . "dashboard_admin.php");
+            header("Location: " . $base . "dashboard_admin");
         } else {
-            header("Location: " . $base . "dashboard_user.php");
+            header("Location: " . $base . "dashboard_user");
         }
         exit;
 

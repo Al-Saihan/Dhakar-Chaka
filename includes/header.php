@@ -21,22 +21,33 @@
                         class="text-white font-semibold uppercase tracking-wider px-3 py-2 rounded-lg hover:bg-blue-600 transition duration-300">About
                         Us</a>
                 </li>
-            </ul>
 
-            <?php if (isset($_SESSION['user_id'])): ?>
-                <?php if (isset($_SESSION['is_moderator']) && $_SESSION['is_moderator']): ?>
-                    <a href="<?= $base ?>dashboard_admin/"
-                        class="text-white font-semibold uppercase tracking-wider px-3 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Dashboard</a>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <?php if (isset($_SESSION['is_moderator']) && $_SESSION['is_moderator']): ?>
+                        <li><a href="<?= $base ?>dashboard_admin/"
+                                class="text-white font-semibold uppercase tracking-wider px-3 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Dashboard</a>
+                        </li>
+
+                        <li> <a href="<?= $base ?>logout/process.php"
+                                class="bg-white text-red-700 font-bold uppercase text-sm px-4 py-2 rounded-full hover:bg-gray-100 transition duration-300">Log
+                                Out</a></li>
+                        </li>
+                    <?php else: ?>
+                        <li><a href="<?= $base ?>dashboard_user/"
+                                class="text-white font-semibold uppercase tracking-wider px-3 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Dashboard</a>
+                        </li>
+                        <li> <a href="<?= $base ?>logout/"
+                                class="bg-white text-red-700 font-bold uppercase text-sm px-4 py-2 rounded-full hover:bg-gray-100 transition duration-300">Log
+                                Out</a></li>
+                        </li>
+                    <?php endif; ?>
                 <?php else: ?>
-                    <a href="<?= $base ?>dashboard_user/"
-                        class="text-white font-semibold uppercase tracking-wider px-3 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Dashboard</a>
+                    <li><a href="<?= $base ?>login/"
+                            class="bg-white text-blue-700 font-bold uppercase text-sm px-4 py-2 rounded-full hover:bg-gray-100 transition duration-300">
+                            Sign-In
+                        </a></li>
                 <?php endif; ?>
-            <?php else: ?>
-                <a href="<?= $base ?>login/"
-                    class="bg-white text-blue-700 font-bold uppercase text-sm px-4 py-2 rounded-full hover:bg-gray-100 transition duration-300">
-                    Sign-In
-                </a>
-            <?php endif; ?>
+            </ul>
         </div>
 
         <div class="md:hidden">

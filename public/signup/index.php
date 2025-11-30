@@ -2,7 +2,7 @@
 session_start();
 $base = '/dhakar-chaka/public/'; // my project root relative to localhost
 include '../../includes/db_connect.php';
-echo $_SESSION['login_error']
+// echo $_SESSION['login_error']
 ?>
 
 <!DOCTYPE html>
