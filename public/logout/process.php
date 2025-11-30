@@ -1,5 +1,6 @@
 <?php
 session_start();
+$base = '/dhakar-chaka/public/';
 
 // Destroy all session data
 session_destroy();
@@ -9,6 +10,5 @@ if (isset($_COOKIE[session_name()])) {
     setcookie(session_name(), '', time() - 3600, '/');
 }
 
-header('Location: ../');
+header('Location: ' . $base);
 exit();
-?>

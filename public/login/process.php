@@ -37,7 +37,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($_SESSION['is_moderator']) {
             header("Location: " . $base . "dashboard_admin");
         } else {
-            header("Location: " . $base . "dashboard_user");
+            if (isset($_SESSION['redirect_after_login'])) {
+                $redirect_url = $_SESSION['redirect_after_login'];
+                unset($_SESSION['redirect_after_login']);
+                header("Location: " . $redirect_url);
+            } else {
+                header("Location: " . $base . "dashboard_user");
+            }
         }
         exit;
 

@@ -2,6 +2,28 @@
 session_start();
 $base = '/dhakar-chaka/public/';  // my project root relative to localhost
 include '../../includes/db_connect.php';
+
+// Fetch user details if logged in
+$user_name = '';
+$user_address = '';
+$user_phone = '';
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
+    $stmt = $pdo->prepare("SELECT name, address, phone FROM user WHERE user_id = ?");
+    $stmt->execute([$user_id]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($user) {
+        $user_name = $user['name'];
+        $user_address = $user['address'];
+        $user_phone = $user['phone'];
+    }
+}
+else{
+    // Redirect to login if not logged in
+    $_SESSION['redirect_after_login'] = $base . 'book_appointment/';
+    header('Location: ' . $base . 'login');
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
