@@ -1,4 +1,5 @@
 <?php
+session_start();
 $base = '/dhakar-chaka/public/';  // my project root relative to localhost
 include '../../includes/db_connect.php';
 ?>
