@@ -1,9 +1,8 @@
 <?php
-// Define the project root variable
-$base = '/dhakar-chaka/public/'; 
-
-// Note: Ensure your header.php and footer.php include paths are correct
-// For example, if this page is in 'public/signup/index.php', the relative path '../../includes/header.php' is correct.
+$base = '/dhakar-chaka/public/'; // my project root relative to localhost
+include '../../includes/db_connect.php';
+session_start();
+echo $_SESSION['login_error']
 ?>
 
 <!DOCTYPE html>
@@ -15,9 +14,8 @@ $base = '/dhakar-chaka/public/';
     <title>Sign Up - Dhakar Chaka</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Optional: Makes the form fields look a little sleeker */
         input:focus, textarea:focus {
-            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* Custom blue focus ring */
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
         }
     </style>
 </head>
@@ -36,7 +34,7 @@ $base = '/dhakar-chaka/public/';
                 </p>
             </div>
             
-            <form class="space-y-6 bg-white p-10 rounded-xl shadow-2xl border border-gray-100" action="#" method="POST">
+            <form class="space-y-6 bg-white p-10 rounded-xl shadow-2xl border border-gray-100" action="<?= $base ?>signup/process.php" method="POST">
                 <div class="space-y-5">
                     
                     <div>
