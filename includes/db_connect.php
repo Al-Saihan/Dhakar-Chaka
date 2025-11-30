@@ -2,7 +2,7 @@
 
 /** Database credentials for XAMPP defaults */
 const DB_HOST = 'localhost';
-const DB_NAME = 'dhakar-chaka'; 
+const DB_NAME = 'dhakar_chaka'; 
 const DB_USER = 'root';
 const DB_PASS = '';
 
@@ -19,7 +19,7 @@ try {
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
     ]);
     
-    echo "Database connected successfully.\n";
+    echo "<script>console.log('CODE 01: Database connected successfully.');</script>";
     // ? Connection successful! The $pdo variable is ready to use.
 
 } catch (PDOException $e) {

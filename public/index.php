@@ -1,5 +1,7 @@
 <?php
 $base = '/dhakar-chaka/public/'; // my project root relative to localhost
+include '../includes/db_connect.php';
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +25,7 @@ $base = '/dhakar-chaka/public/'; // my project root relative to localhost
                 <h1 class="text-5xl font-extrabold mb-4 text-gray-900 leading-tight">Welcome to Dhakar Chaka</h1>
                 <p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">Your trusted, one-stop solution for all your
                     car maintenance and repair needs.</p>
-                <a href="#"
+                <a href="<?= $base ?>book_appointment/"
                     class="inline-block bg-blue-700 text-white font-semibold tracking-wide uppercase px-8 py-3 rounded-lg shadow-lg hover:bg-blue-800 transition duration-300 transform hover:scale-105">
                     Book a Service Today
                 </a>
