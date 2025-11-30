@@ -25,10 +25,10 @@
 
             <?php if (isset($_SESSION['user_id'])): ?>
                 <?php if (isset($_SESSION['is_moderator']) && $_SESSION['is_moderator']): ?>
-                    <a href="<?= $base ?>dashboard_admin.php"
+                    <a href="<?= $base ?>dashboard_admin/"
                         class="text-white font-semibold uppercase tracking-wider px-3 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Dashboard</a>
                 <?php else: ?>
-                    <a href="<?= $base ?>dashboard_user.php"
+                    <a href="<?= $base ?>dashboard_user/"
                         class="text-white font-semibold uppercase tracking-wider px-3 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Dashboard</a>
                 <?php endif; ?>
             <?php else: ?>
