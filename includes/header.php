@@ -6,7 +6,7 @@
             Dhakar Chaka
         </a>
 
-        <div class="hidden md:flex items-center space-x-6">
+        <div class="hidden lg:flex items-center space-x-6">
             <ul class="flex space-x-4">
                 <li>
                     <a href="<?= $base ?>"
@@ -50,7 +50,7 @@
             </ul>
         </div>
 
-        <div class="md:hidden">
+        <div class="lg:hidden">
             <button id="mobile-menu-button" onclick="toggleMobileNav()" class="text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +61,7 @@
         </div>
 
         <div id="mobileNav"
-            class="hidden md:hidden absolute top-full left-0 w-full bg-blue-900 border-t border-blue-700 shadow-xl z-20">
+            class="hidden lg:hidden absolute top-full left-0 w-full bg-blue-900 border-t border-blue-700 shadow-xl z-20">
             <div class="px-6 py-4 space-y-3">
                 <a href="<?= $base ?>"
                     class="block text-white font-semibold uppercase tracking-wider py-2 hover:text-blue-200 transition duration-150">Home</a>
@@ -73,15 +73,24 @@
 
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <?php if (isset($_SESSION['is_moderator']) && $_SESSION['is_moderator']): ?>
-                        <a href="<?= $base ?>dashboard_admin.php"
+                        <a href="<?= $base ?>dashboard_admin/"
                             class="block text-white font-semibold uppercase tracking-wider py-2 hover:text-blue-200 transition duration-150">Dashboard</a>
+
+                        <a href="<?= $base ?>logout/process.php"
+                            class="block text-white font-semibold uppercase tracking-wider py-2 hover:text-blue-200 transition duration-150">Log
+                            Out</a>
                     <?php else: ?>
-                        <a href="<?= $base ?>dashboard_user.php"
+                        <a href="<?= $base ?>dashboard_user/"
                             class="block text-white font-semibold uppercase tracking-wider py-2 hover:text-blue-200 transition duration-150">Dashboard</a>
+                        <a href="<?= $base ?>logout/process.php"
+                            class="block text-red-500 font-semibold uppercase tracking-wider py-2 hover:text-red-200 transition duration-150">Log
+                            Out</a>
                     <?php endif; ?>
                 <?php else: ?>
                     <a href="<?= $base ?>login/"
-                        class="block bg-white text-blue-700 font-bold uppercase text-sm px-4 py-2 rounded-full hover:bg-gray-100 text-center mt-4 shadow transition duration-150">Sign-In</a>
+                        class="block text-blue-300 font-semibold uppercase tracking-wider py-2 hover:text-blue-200 transition duration-150">
+                        Sign-In
+                    </a>
                 <?php endif; ?>
             </div>
         </div>

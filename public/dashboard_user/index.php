@@ -28,7 +28,7 @@ $appointments = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <main>
         <div class="container mx-auto px-4 py-8">
             <!-- User Profile Section -->
-            <div class="bg-white rounded-lg shadow-md p-6 mb-8 text-center">
+            <div class="bg-white border border-gray-100 rounded-lg shadow-md p-6 mb-8 text-center">
                 <h1 class="text-3xl font-bold mb-6">User Profile</h1>
                 <?php if (!empty($users)): ?>
                     <?php $user = $users[0]; ?>
@@ -61,7 +61,7 @@ $appointments = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
 
             <!-- Appointments Section -->
-            <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="bg-white border border-gray-100 rounded-lg shadow-md p-6">
                 <h2 class="text-2xl font-bold mb-6 text-center">My Appointments</h2>
                 <?php if (!empty($appointments)): ?>
                     <div class="overflow-x-auto">
