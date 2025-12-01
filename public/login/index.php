@@ -24,6 +24,21 @@ echo "<script>console.log(" . json_encode($_SESSION) . ");</script>";
 
             <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
                 <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Login to Your Account</h2>
+                <?php
+                if (isset($_SESSION['login_error'])) {
+                    echo '<div class="mb-4 p-4 bg-red-100 text-red-700 border border-red-400 rounded">';
+                    echo htmlspecialchars($_SESSION['login_error'], ENT_QUOTES, 'UTF-8');
+                    echo '</div>';
+                    unset($_SESSION['login_error']);
+                }
+                if (isset($_SESSION['signup_success'])) {
+                    echo '<div class="mb-4 p-4 bg-green-100 text-green-700 border border-green-400 rounded">';
+                    echo htmlspecialchars($_SESSION['signup_success'], ENT_QUOTES, 'UTF-8');
+                    echo '</div>';
+                    unset($_SESSION['signup_success']);
+                }
+                ?>
+
                 <form action="<?= $base ?>login/process.php" method="POST" class="space-y-6">
                     <div>
                         <label for="phone" class="block text-gray-700 font-semibold mb-2">Phone Number</label>

@@ -33,7 +33,14 @@ include '../../includes/db_connect.php';
                     Join Dhakar Chaka for reliable, quality car services.
                 </p>
             </div>
-            
+            <?php 
+            if (isset($_SESSION['signup_error'])) {
+                echo '<div class="mb-6 p-4 bg-red-100 text-red-700 border border-red-400 rounded">';
+                echo htmlspecialchars($_SESSION['signup_error'], ENT_QUOTES, 'UTF-8');
+                echo '</div>';
+                unset($_SESSION['signup_error']);
+            }
+            ?>
             <form class="space-y-6 bg-white p-10 rounded-xl shadow-2xl border border-gray-100" action="<?= $base ?>signup/process.php" method="POST">
                 <div class="space-y-5">
                     
